@@ -165,3 +165,13 @@ console.log(newAddressBook.toString());
 //Counting number of contacts
 let contactsCount = newAddressBook.length;
 console.log("Number of Contacts in The address book "+contactsCount);
+
+//Checking for duplicate values
+newAddressBook.forEach(entries => {
+    if(entries.firstName === "Viraj"){
+        console.log("Already one contact is there with this name"); 
+    } else {
+        let newContact = new AddressBookSystem("Vamsi", "SN", "ghanshyamNagar", "surat", "gujarat", 333222, 8887779998, "vamsi@gmail.com");
+        newAddressBook.push(newContact);
+    }
+});
