@@ -140,8 +140,8 @@ let contact2 = new AddressBookSystem("Rajveer", "Sharma", "ghanshyamNagar", "sur
 newAddressBook.push(addressBookContact);
 newAddressBook.push(contact1);
 newAddressBook.push(contact2);
-console.log("Successfully added the contacts to address book!!!")
-console.log("The new address book contacts are : "+newAddressBook.toString());
+console.log("\nSuccessfully added the contacts to address book!!!")
+console.log("\nThe new address book contacts are : "+newAddressBook.toString());
 
 //edit an existing contact
 newAddressBook.forEach(entries => {
@@ -149,7 +149,7 @@ newAddressBook.forEach(entries => {
         entries.city = "Bharuch"; 
     }
 });
-console.log("Successfully edited the selected contact!!!")
+console.log("\nSuccessfully edited the selected contact!!!")
 console.log("Updated output is : "+newAddressBook.toString());  
 
 //deleting an existing contact
@@ -158,18 +158,18 @@ newAddressBook.forEach(entries => {
         newAddressBook.pop(entries);
     }
 });
-console.log("Successfuly deleted contact!!!");
+console.log("\nSuccessfuly deleted contact!!!");
 console.log(newAddressBook.toString());
 
 
 //Counting number of contacts
 let contactsCount = newAddressBook.length;
-console.log("Number of Contacts in The address book "+contactsCount);
+console.log("\nNumber of Contacts in The address book "+contactsCount);
 
 //Checking for duplicate values
 newAddressBook.forEach(entries => {
     if(entries.firstName === "Viraj"){
-        console.log("Already one contact is there with this name"); 
+        console.log("\nAlready one contact is there with this name"); 
     } else {
         let newContact = new AddressBookSystem("Vamsi", "Singh", "ghanshyamNagar", "surat", "gujarat", 333222, 8887779998, "vamsi@gmail.com");
         newAddressBook.push(newContact);
@@ -179,24 +179,24 @@ newAddressBook.forEach(entries => {
 //Searching a person by city
 newAddressBook.forEach(entries => {
     if(entries.city === "surat"){
-        console.log("Person searched by city: "+entries.toString());
+        console.log("\nPerson searched by city: "+entries.toString());
     }
 });
 
 //Searching a person by state
 newAddressBook.forEach(entries => {
     if(entries.state === "gujarat"){
-        console.log("Person searched by state: "+entries.toString());
+        console.log("\nPerson searched by state: "+entries.toString());
     }
 });
 
 //Ability to count persons by city
 let countByCity = newAddressBook.filter(count => count.city === 'surat').length;
-console.log("Counted Persons by city : "+countByCity);
+console.log("\nCounted Persons by city : "+countByCity);
 
 //Abilty to count persons by state
 let countByState = newAddressBook.filter(countPerson => countPerson.state === 'gujarat').length;
-console.log("Counted Persons by state : "+countByState); 
+console.log("\nCounted Persons by state : "+countByState); 
 
 //Abilty to sort address book entries alphabatically by persons name
 let sortedByName = newAddressBook.sort(function (a, b){
@@ -204,4 +204,24 @@ let sortedByName = newAddressBook.sort(function (a, b){
         return -1;
     }
 });
-console.log("Entries of Address Book sorted by persons name: "+sortedByName);
+console.log("\nEntries of Address Book sorted by persons name: "+sortedByName);
+
+//Ability to sort address book entries alphabatically by city name 
+let sortedByCityName = newAddressBook.sort(function (a, b){
+    if (a.city < b.city){
+        return -1;
+    }
+});
+console.log("\nEntries of Address Book sorted by city name: "+sortedByCityName);
+
+//Ability to sort the data alphabatically by state name
+let sortedByStateName = newAddressBook.sort(function (a, b){
+    if (a.state < b.state){
+        return -1;
+    }
+});
+console.log("\nEntries of Address Book sorted by state name: "+sortedByStateName);
+
+//Ability to sort the data numerically by zipCode
+const sortedByZipCode = newAddressBook.slice().sort((a,b)=>a-b);
+console.log("\nSorted by zip code : "+sortedByZipCode);
