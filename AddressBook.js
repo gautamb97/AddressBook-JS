@@ -189,3 +189,11 @@ newAddressBook.forEach(entries => {
         console.log("Person searched by state: "+entries.toString());
     }
 });
+
+//Ability to count persons by city
+let countByCity = newAddressBook.filter(count => count.city === 'surat').length;
+console.log("Counted Persons by city : "+countByCity);
+
+//Abilty to count persons by state
+let countByState = newAddressBook.filter(countPerson => countPerson.state === 'gujarat').length;
+console.log("Counted Persons by state : "+countByState); 
