@@ -133,19 +133,28 @@ try{
     console.error(e);
 }
 
+//added contacts to address book array
 let newAddressBook = new Array();
 let contact1 = new AddressBookSystem("Viraj", "Dongre", "ghanshyamNagar", "surat", "gujarat", 333222, 9878543367, "viraj@gmail.com");
 newAddressBook.push(addressBookContact);
 newAddressBook.push(contact1);
+console.log("Successfully added the contacts to address book!!!")
 console.log("The new address book contacts are : "+newAddressBook.toString());
 
+//edit an existing contact
 newAddressBook.forEach(entries => {
     if(entries.firstName === "Viraj"){
         entries.city = "Bharuch"; 
     }
 });
-console.log("Updated output is : "+newAddressBook.toString());
+console.log("Successfully edited the selected contact!!!")
+console.log("Updated output is : "+newAddressBook.toString());  
 
-// const prompt = require('prompt-sync')();
-// let name = prompt ("Enter any number");
-// console.log(name);
+//deleting an existing contact
+newAddressBook.forEach(entries => {
+    if(entries.firstName === "Viraj"){
+        newAddressBook.pop(entries);
+    }
+});
+console.log("Successfuly deleted contact!!!");
+console.log(newAddressBook.toString());
