@@ -197,3 +197,11 @@ console.log("Counted Persons by city : "+countByCity);
 //Abilty to count persons by state
 let countByState = newAddressBook.filter(countPerson => countPerson.state === 'gujarat').length;
 console.log("Counted Persons by state : "+countByState); 
+
+//Abilty to sort address book entries alphabatically by persons name
+let sortedByName = newAddressBook.sort(function (a, b){
+    if (a.firstName < b.firstName){
+        return -1;
+    }
+});
+console.log("Entries of Address Book sorted by persons name: "+sortedByName);
