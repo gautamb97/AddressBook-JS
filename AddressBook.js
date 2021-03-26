@@ -132,3 +132,9 @@ try{
 } catch (e) {
     console.error(e);
 }
+
+let newAddressBook = new Array();
+let contact1 = new AddressBookSystem("Viraj", "Dongre", "ghanshyamNagar", "surat", "gujarat", 333222, 9878543367, "viraj@gmail.com");
+newAddressBook.push(addressBookContact.toString());
+newAddressBook.push(contact1.toString());
+console.log("The new address book contacts are : "+newAddressBook);
