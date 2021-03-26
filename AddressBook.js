@@ -136,8 +136,10 @@ try{
 //added contacts to address book array
 let newAddressBook = new Array();
 let contact1 = new AddressBookSystem("Viraj", "Dongre", "ghanshyamNagar", "surat", "gujarat", 333222, 9878543367, "viraj@gmail.com");
+let contact2 = new AddressBookSystem("Rajveer", "Sharma", "ghanshyamNagar", "surat", "gujarat", 333222, 9878543367, "rajveer@gmail.com");
 newAddressBook.push(addressBookContact);
 newAddressBook.push(contact1);
+newAddressBook.push(contact2);
 console.log("Successfully added the contacts to address book!!!")
 console.log("The new address book contacts are : "+newAddressBook.toString());
 
@@ -152,9 +154,14 @@ console.log("Updated output is : "+newAddressBook.toString());
 
 //deleting an existing contact
 newAddressBook.forEach(entries => {
-    if(entries.firstName === "Viraj"){
+    if(entries.firstName === "Rajveer"){
         newAddressBook.pop(entries);
     }
 });
 console.log("Successfuly deleted contact!!!");
 console.log(newAddressBook.toString());
+
+
+//Counting number of contacts
+let contactsCount = newAddressBook.length;
+console.log("Number of Contacts in The address book "+contactsCount);
