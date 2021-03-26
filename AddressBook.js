@@ -135,6 +135,17 @@ try{
 
 let newAddressBook = new Array();
 let contact1 = new AddressBookSystem("Viraj", "Dongre", "ghanshyamNagar", "surat", "gujarat", 333222, 9878543367, "viraj@gmail.com");
-newAddressBook.push(addressBookContact.toString());
-newAddressBook.push(contact1.toString());
-console.log("The new address book contacts are : "+newAddressBook);
+newAddressBook.push(addressBookContact);
+newAddressBook.push(contact1);
+console.log("The new address book contacts are : "+newAddressBook.toString());
+
+newAddressBook.forEach(entries => {
+    if(entries.firstName === "Viraj"){
+        entries.city = "Bharuch"; 
+    }
+});
+console.log("Updated output is : "+newAddressBook.toString());
+
+// const prompt = require('prompt-sync')();
+// let name = prompt ("Enter any number");
+// console.log(name);
