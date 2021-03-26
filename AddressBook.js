@@ -171,7 +171,21 @@ newAddressBook.forEach(entries => {
     if(entries.firstName === "Viraj"){
         console.log("Already one contact is there with this name"); 
     } else {
-        let newContact = new AddressBookSystem("Vamsi", "SN", "ghanshyamNagar", "surat", "gujarat", 333222, 8887779998, "vamsi@gmail.com");
+        let newContact = new AddressBookSystem("Vamsi", "Singh", "ghanshyamNagar", "surat", "gujarat", 333222, 8887779998, "vamsi@gmail.com");
         newAddressBook.push(newContact);
+    }
+});
+
+//Searching a person by city
+newAddressBook.forEach(entries => {
+    if(entries.city === "surat"){
+        console.log("Person searched by city: "+entries.toString());
+    }
+});
+
+//Searching a person by state
+newAddressBook.forEach(entries => {
+    if(entries.state === "gujarat"){
+        console.log("Person searched by state: "+entries.toString());
     }
 });
